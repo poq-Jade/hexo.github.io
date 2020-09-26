@@ -1,0 +1,580 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hexo配置 | 平淡且平凡</title><meta name="description" content="您可以在 _config.yml 中修改大部分的配置。 网站   参数 描述    title 网站标题   subtitle 网站副标题   description 网站描述   keywords 网站的关键词。支援多个关键词。   author 您的名字   language 网站使用的语言。对于简体中文用户来说，使用不同的主题可能需要设置成不同的值，请参考你的主题的文档自行设置，常见的有 z"><meta name="keywords" content="Hexo"><meta name="author" content="平淡且平凡,1043643347@qq.com"><meta name="copyright" content="平淡且平凡"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/posts/e18ede91.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="yandex-verification" content="{&quot;theme_color&quot;:{&quot;enable&quot;:true,&quot;main&quot;:&quot;#49B1F5&quot;,&quot;paginator&quot;:&quot;#00c4b6&quot;,&quot;button_hover&quot;:&quot;#FF7242&quot;,&quot;text_selection&quot;:&quot;#00c4b6&quot;,&quot;link_color&quot;:&quot;#99a9bf&quot;,&quot;meta_color&quot;:&quot;#858585&quot;,&quot;hr_color&quot;:&quot;#A4D8FA&quot;,&quot;code_foreground&quot;:&quot;#F47466&quot;,&quot;code_background&quot;:&quot;rgba(27, 31, 35, .05)&quot;,&quot;toc_color&quot;:&quot;#00c4b6&quot;,&quot;blockquote_padding_color&quot;:&quot;#49b1f5&quot;,&quot;blockquote_background_color&quot;:&quot;#49b1f5&quot;}}"/><meta property="og:type" content="article"><meta property="og:title" content="Hexo配置"><meta property="og:url" content="http://example.com/posts/e18ede91.html"><meta property="og:site_name" content="平淡且平凡"><meta property="og:description" content="您可以在 _config.yml 中修改大部分的配置。 网站   参数 描述    title 网站标题   subtitle 网站副标题   description 网站描述   keywords 网站的关键词。支援多个关键词。   author 您的名字   language 网站使用的语言。对于简体中文用户来说，使用不同的主题可能需要设置成不同的值，请参考你的主题的文档自行设置，常见的有 z"><meta property="og:image" content="http://example.com/null"><meta property="article:published_time" content="2020-09-16T03:37:12.000Z"><meta property="article:modified_time" content="2020-09-26T02:16:46.125Z"><meta name="twitter:card" content="summary"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.1.1',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":3,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime: '',
+  date_suffix: {"one_hour":"刚刚","hours":"小时前","day":"天前"},
+  copyright: undefined,
+  ClickShowText: {"text":"富强,民主,文明,和谐,自由,平等,公正,法治,爱国,敬业,诚信,友善","fontSize":"20px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+    },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2020-09-26 10:16:46'
+}</script><noscript><style type="text/css">
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+  }
+}
+
+var autoChangeMode = 'false'
+var t = saveToLocal.get('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (saveToLocal.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><meta name="generator" content="Hexo 5.1.1"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="/null" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">13</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%AB%99"><span class="toc-number">1.</span> <span class="toc-text">网站</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E5%9D%80"><span class="toc-number">2.</span> <span class="toc-text">网址</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E5%AD%98%E6%94%BE%E5%9C%A8%E5%AD%90%E7%9B%AE%E5%BD%95"><span class="toc-number">2.1.</span> <span class="toc-text">网站存放在子目录</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-number">3.</span> <span class="toc-text">目录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA"><span class="toc-number">3.1.</span> <span class="toc-text">提示</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E7%AB%A0"><span class="toc-number">4.</span> <span class="toc-text">文章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E5%9C%B0%E5%9D%80"><span class="toc-number">4.1.</span> <span class="toc-text">相对地址</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E7%B1%BB-amp-%E6%A0%87%E7%AD%BE"><span class="toc-number">5.</span> <span class="toc-text">分类 &amp; 标签</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F-%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F"><span class="toc-number">6.</span> <span class="toc-text">日期 &#x2F; 时间格式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#updated-option"><span class="toc-number">7.</span> <span class="toc-text">updated_option</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E9%A1%B5"><span class="toc-number">8.</span> <span class="toc-text">分页</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%A9%E5%B1%95"><span class="toc-number">9.</span> <span class="toc-text">扩展</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%85%E6%8B%AC%E6%88%96%E4%B8%8D%E5%8C%85%E6%8B%AC%E7%9B%AE%E5%BD%95%E5%92%8C%E6%96%87%E4%BB%B6"><span class="toc-number">9.1.</span> <span class="toc-text">包括或不包括目录和文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E4%BB%A3%E6%9B%BF%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">9.2.</span> <span class="toc-text">使用代替配置文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E4%BB%A3%E6%9B%BF%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">9.3.</span> <span class="toc-text">使用代替主题配置文件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#confiig-yml-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">10.</span> <span class="toc-text">_confiig.yml 配置文件</span></a></li></ol></div></div></div><header class="post-bg" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">平淡且平凡</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">Hexo配置</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-16T03:37:12.000Z" title="发表于 2020-09-16 11:37:12">2020-09-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-09-26T02:16:46.125Z" title="更新于 2020-09-26 10:16:46">2020-09-26</time></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><p>您可以在 _config.yml 中修改大部分的配置。</p>
+<h1 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h1><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">title</td>
+<td align="left">网站标题</td>
+</tr>
+<tr>
+<td align="left">subtitle</td>
+<td align="left">网站副标题</td>
+</tr>
+<tr>
+<td align="left">description</td>
+<td align="left">网站描述</td>
+</tr>
+<tr>
+<td align="left">keywords</td>
+<td align="left">网站的关键词。支援多个关键词。</td>
+</tr>
+<tr>
+<td align="left">author</td>
+<td align="left">您的名字</td>
+</tr>
+<tr>
+<td align="left">language</td>
+<td align="left">网站使用的语言。对于简体中文用户来说，使用不同的主题可能需要设置成不同的值，请参考你的主题的文档自行设置，常见的有 zh-Hans和 zh-CN。</td>
+</tr>
+<tr>
+<td align="left">timezone</td>
+<td align="left">网站时区。Hexo 默认使用您电脑的时区。请参考 时区列表 进行设置，如 America/New_York, Japan, 和 UTC 。一般的，对于中国大陆地区可以使用 Asia/Shanghai。</td>
+</tr>
+</tbody></table>
+<p>其中，description主要用于SEO，告诉搜索引擎一个关于您站点的简单描述，通常建议在其中包含您网站的关键词。author参数用于主题显示文章的作者。</p>
+<h1 id="网址"><a href="#网址" class="headerlink" title="网址"></a>网址</h1><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">url</td>
+<td align="left">网站根目录</td>
+<td align="left">网站根目录</td>
+</tr>
+<tr>
+<td align="left">root</td>
+<td align="left">网站根目录</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">permalink</td>
+<td align="left">文章的 永久链接 格式</td>
+<td align="left">:year/:month/:day/:title/</td>
+</tr>
+<tr>
+<td align="left">permalink_defaults</td>
+<td align="left">永久链接中各部分的默认值</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">pretty_urls</td>
+<td align="left">改写 permalink 的值来美化 URL</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">pretty_urls.trailing_index</td>
+<td align="left">是否在永久链接中保留尾部的 index.html，设置为 false 时去除</td>
+<td align="left">true</td>
+</tr>
+<tr>
+<td align="left">pretty_urls.trailing_html</td>
+<td align="left">是否在永久链接中保留尾部的 .html, 设置为 false 时去除 (对尾部的 index.html无效)</td>
+<td align="left">true</td>
+</tr>
+</tbody></table>
+<blockquote>
+<h2 id="网站存放在子目录"><a href="#网站存放在子目录" class="headerlink" title="网站存放在子目录"></a>网站存放在子目录</h2><p>如果您的网站存放在子目录中，例如 <a href="http://example.com/blog%EF%BC%8C%E5%88%99%E8%AF%B7%E5%B0%86%E6%82%A8%E7%9A%84">http://example.com/blog，则请将您的</a> url 设为 <a href="http://example.com/blog">http://example.com/blog</a> 并把 root 设为 /blog/。</p>
+</blockquote>
+<p>例如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 比如，一个页面的永久链接是 http:&#x2F;&#x2F;example.com&#x2F;foo&#x2F;bar&#x2F;index.html</span><br><span class="line">pretty_urls:</span><br><span class="line">  trailing_index: false</span><br><span class="line"># 此时页面的永久链接会变为 http:&#x2F;&#x2F;example.com&#x2F;foo&#x2F;bar&#x2F;</span><br></pre></td></tr></table></figure>
+
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">source_dir</td>
+<td align="left">资源文件夹，这个文件夹用来存放内容。</td>
+<td align="left">source</td>
+</tr>
+<tr>
+<td align="left">public_dir</td>
+<td align="left">公共文件夹，这个文件夹用于存放生成的站点文件。</td>
+<td align="left">public</td>
+</tr>
+<tr>
+<td align="left">tag_dir</td>
+<td align="left">标签文件夹</td>
+<td align="left">tags</td>
+</tr>
+<tr>
+<td align="left">archive_dir</td>
+<td align="left">归档文件夹</td>
+<td align="left">archives</td>
+</tr>
+<tr>
+<td align="left">category_dir</td>
+<td align="left">分类文件夹</td>
+<td align="left">categories</td>
+</tr>
+<tr>
+<td align="left">code_dir</td>
+<td align="left">Include code 文件夹，source_dir 下的子目录</td>
+<td align="left">downloads/code</td>
+</tr>
+<tr>
+<td align="left">i18n_dir</td>
+<td align="left">国际化（i18n）文件夹</td>
+<td align="left">:lang</td>
+</tr>
+<tr>
+<td align="left">skip_render</td>
+<td align="left">跳过指定文件的渲染。匹配到的文件将会被不做改动地复制到 public 目录中。您可使用 glob 表达式来匹配路径。</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">skip_render: &quot;mypage&#x2F;**&#x2F;*&quot;</span><br><span class="line"># 将会直接将 &#96;source&#x2F;mypage&#x2F;index.html&#96; 和 &#96;source&#x2F;mypage&#x2F;code.js&#96; 不做改动地输出到 &#39;public&#39; 目录</span><br><span class="line"># 你也可以用这种方法来跳过对指定文章文件的渲染</span><br><span class="line">skip_render: &quot;_posts&#x2F;test-post.md&quot;</span><br><span class="line"># 这将会忽略对 &#39;test-post.md&#39; 的渲染</span><br></pre></td></tr></table></figure>
+<blockquote>
+<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><p>如果您刚刚开始接触 Hexo，通常没有必要修改这一部分的值。</p>
+</blockquote>
+<h1 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h1><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">new_post_name</td>
+<td align="left">新文章的文件名称</td>
+<td align="left">:title.md</td>
+</tr>
+<tr>
+<td align="left">default_layout</td>
+<td align="left">预设布局</td>
+<td align="left">post</td>
+</tr>
+<tr>
+<td align="left">auto_spacing</td>
+<td align="left">在中文和英文之间加入空格</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">titlecase</td>
+<td align="left">把标题转换为 title case</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">external_link</td>
+<td align="left">在新标签中打开链接</td>
+<td align="left">true</td>
+</tr>
+<tr>
+<td align="left">external_link.enable</td>
+<td align="left">在新标签中打开链接</td>
+<td align="left">true</td>
+</tr>
+<tr>
+<td align="left">external_link.field</td>
+<td align="left">对整个网站（site）生效或仅对文章（post）生效</td>
+<td align="left">site</td>
+</tr>
+<tr>
+<td align="left">external_link.exclude</td>
+<td align="left">需要排除的域名。主域名和子域名如 www 需分别配置</td>
+<td align="left">[]</td>
+</tr>
+<tr>
+<td align="left">filename_case</td>
+<td align="left">把文件名称转换为 (1) 小写或 (2) 大写</td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">render_drafts</td>
+<td align="left">显示草稿</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">post_asset_folder</td>
+<td align="left">启动 Asset 文件夹</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">relative_link</td>
+<td align="left">把链接改为与根目录的相对位址</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">future</td>
+<td align="left">显示未来的文章</td>
+<td align="left">true</td>
+</tr>
+<tr>
+<td align="left">highlight</td>
+<td align="left">代码块的设置, see Highlight.js section for usage guide</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">prismjs</td>
+<td align="left">代码块的设置, see PrismJS section for usage guide</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<blockquote>
+<h2 id="相对地址"><a href="#相对地址" class="headerlink" title="相对地址"></a>相对地址</h2><p>默认情况下，Hexo 生成的超链接都是绝对地址。例如，如果您的网站域名<br>为 example.com,您有一篇文章名为 hello，那么绝对链接可能像这<br>样：<a href="http://example.com/hello.html%EF%BC%8C%E5%AE%83%E6%98%AF%E7%BB%9D%E5%AF%B9%E4%BA%8E%E5%9F%9F%E5%90%8D%E7%9A%84%E3%80%82%E7%9B%B8%E5%AF%B9%E9%93%BE%E6%8E%A5%E5%83%8F%E8%BF%99">http://example.com/hello.html，它是绝对于域名的。相对链接像这</a><br>样：/hello.html，也就是说，无论用什么域名访问该站点，都没有关系，<br>这在进行反向代理时可能用到。通常情况下，建议使用绝对地址。</p>
+</blockquote>
+<h1 id="分类-amp-标签"><a href="#分类-amp-标签" class="headerlink" title="分类 &amp; 标签"></a>分类 &amp; 标签</h1><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">default_category</td>
+<td align="left">默认分类</td>
+<td align="left">uncategorized</td>
+</tr>
+<tr>
+<td align="left">category_map</td>
+<td align="left">分类别名</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">tag_map</td>
+<td align="left">标签别名</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h1 id="日期-时间格式"><a href="#日期-时间格式" class="headerlink" title="日期 / 时间格式"></a>日期 / 时间格式</h1><p>Hexo 使用 Moment.js 来解析和显示时间。</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">date_format</td>
+<td align="left">日期格式</td>
+<td align="left">YYYY-MM-DD</td>
+</tr>
+<tr>
+<td align="left">time_format</td>
+<td align="left">时间格式</td>
+<td align="left">HH:mm:ss</td>
+</tr>
+<tr>
+<td align="left">updated_option</td>
+<td align="left">当 Front Matter 中没有指定 updated 时 updated 的取值</td>
+<td align="left">mtime</td>
+</tr>
+</tbody></table>
+<blockquote>
+<h1 id="updated-option"><a href="#updated-option" class="headerlink" title="updated_option"></a>updated_option</h1><p>updated_option 控制了当 Front Matter 中没有指定 updated 时，updated 如何取值：<br>mtime: 使用文件的最后修改时间。这是从 Hexo 3.0.0 开始的默认行为。<br>date: 使用 date 作为 updated 的值。可被用于 Git 工作流之中，因为使用 Git 管理站点时，文件的最后修改日期常常会发生改变<br> empty: 直接删除 updated。使用这一选项可能会导致大部分主题和插件无法正常工作。<br> use_date_for_updated 选项已经被废弃，将会在下个重大版本发布时去除。请改为使用 updated_option: ‘date’。</p>
+</blockquote>
+<p>use_date_for_updated | 启用以后，如果 Front Matter 中没有指定 updated， post.updated 将会使用 date 的值而不是文件的<br>创建时间。在 Git 工作流中这个选项会很有用 | true</p>
+<h1 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h1><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">per_page</td>
+<td align="left">每页显示的文章量 (0 = 关闭分页功能)</td>
+<td align="left">10</td>
+</tr>
+<tr>
+<td align="left">pagination_dir</td>
+<td align="left">分页目录</td>
+<td align="left">page</td>
+</tr>
+</tbody></table>
+<h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">theme</td>
+<td align="left">当前主题名称。值为false时禁用主题</td>
+</tr>
+<tr>
+<td align="left">theme_config</td>
+<td align="left">主题的配置文件。在这里放置的配置会覆盖主题目录下的 _config.yml 中的配置</td>
+</tr>
+<tr>
+<td align="left">deploy</td>
+<td align="left">部署部分的设置</td>
+</tr>
+<tr>
+<td align="left">meta_generator</td>
+<td align="left">Meta generator 标签。 值为 false 时 Hexo 不会在头部插入该标签</td>
+</tr>
+</tbody></table>
+<h2 id="包括或不包括目录和文件"><a href="#包括或不包括目录和文件" class="headerlink" title="包括或不包括目录和文件"></a>包括或不包括目录和文件</h2><p>在 Hexo 配置文件中，通过设置 include/exclude 可以让 Hexo 进行处理或忽略某些目录和文件夹。<br>你可以使用 glob 表达式 对目录和文件进行匹配。</p>
+<p>include and exclude options only apply to the source/ folder, whereas ignore option applies to all folders.</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">include</td>
+<td align="left">Hexo 默认会忽略隐藏文件和文件夹（包括名称以下划线和 . 开头的文件和文件夹，Hexo 的 _posts 和 _data 等目录除外）。通过设置此字段将使 Hexo 处理他们并将它们复制到 source 目录下。</td>
+</tr>
+<tr>
+<td align="left">exclude</td>
+<td align="left">Hexo 会忽略这些文件和目录</td>
+</tr>
+<tr>
+<td align="left">ignore</td>
+<td align="left">Ignore files/folders</td>
+</tr>
+</tbody></table>
+<p>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"># Include&#x2F;Exclude Files&#x2F;Folders</span><br><span class="line">include:</span><br><span class="line">  - &quot;.nojekyll&quot;</span><br><span class="line">  # 包括 &#39;source&#x2F;css&#x2F;_typing.css&#39;</span><br><span class="line">  - &quot;css&#x2F;_typing.css&quot;</span><br><span class="line">  # 包括 &#39;source&#x2F;_css&#x2F;&#39; 中的任何文件，但不包括子目录及其其中的文件。</span><br><span class="line">  - &quot;_css&#x2F;*&quot;</span><br><span class="line">  # 包含 &#39;source&#x2F;_css&#x2F;&#39; 中的任何文件和子目录下的任何文件</span><br><span class="line">  - &quot;_css&#x2F;**&#x2F;*&quot;</span><br><span class="line"></span><br><span class="line">exclude:</span><br><span class="line">  # 不包括 &#39;source&#x2F;js&#x2F;test.js&#39;</span><br><span class="line">  - &quot;js&#x2F;test.js&quot;</span><br><span class="line">  # 不包括 &#39;source&#x2F;js&#x2F;&#39; 中的文件、但包括子目录下的所有目录和文件</span><br><span class="line">  - &quot;js&#x2F;*&quot;</span><br><span class="line">  # 不包括 &#39;source&#x2F;js&#x2F;&#39; 中的文件和子目录下的任何文件</span><br><span class="line">  - &quot;js&#x2F;**&#x2F;*&quot;</span><br><span class="line">  # 不包括 &#39;source&#x2F;js&#x2F;&#39; 目录下的所有文件名以 &#39;test&#39; 开头的文件，但包括其它文件和子目录下的单文件</span><br><span class="line">  - &quot;js&#x2F;test*&quot;</span><br><span class="line">  # 不包括 &#39;source&#x2F;js&#x2F;&#39; 及其子目录中任何以 &#39;test&#39; 开头的文件</span><br><span class="line">  - &quot;js&#x2F;**&#x2F;test*&quot;</span><br><span class="line">  # 不要用 exclude 来忽略 &#39;source&#x2F;_posts&#x2F;&#39; 中的文件。你应该使用 &#39;skip_render&#39;，或者在要忽略的文件的文件名之前加一个下划线 &#39;_&#39;</span><br><span class="line">  # 在这里配置一个 - &quot;_posts&#x2F;hello-world.md&quot; 是没有用的。</span><br><span class="line"></span><br><span class="line">ignore:</span><br><span class="line">  # Ignore any folder named &#39;foo&#39;.</span><br><span class="line">  - &quot;**&#x2F;foo&quot;</span><br><span class="line">  # Ignore &#39;foo&#39; folder in &#39;themes&#x2F;&#39; only.</span><br><span class="line">  - &quot;**&#x2F;themes&#x2F;*&#x2F;foo&quot;</span><br><span class="line">  # Same as above, but applies to every subfolders of &#39;themes&#x2F;&#39;.</span><br><span class="line">  - &quot;**&#x2F;themes&#x2F;**&#x2F;foo&quot;</span><br></pre></td></tr></table></figure>
+<p>列表中的每一项都必须用单引号或双引号包裹起来。</p>
+<p>include 和 exclude 并不适用于 themes/ 目录下的文件。如果需要忽略 themes/ 目录下的部分文件或文件夹，<br>可以使用 ignore 或在文件名之前添加下划线 _。</p>
+<h2 id="使用代替配置文件"><a href="#使用代替配置文件" class="headerlink" title="使用代替配置文件"></a>使用代替配置文件</h2><p>可以在 hexo-cli 中使用 –config 参数来指定自定义配置文件的路径。你可以使用一个 YAML 或 JSON 文件的路径，<br>也可以使用逗号分隔（无空格）的多个 YAML 或 JSON 文件的路径。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># use &#39;custom.yml&#39; in place of &#39;_config.yml&#39;</span><br><span class="line">$ hexo server --config custom.yml</span><br><span class="line"></span><br><span class="line"># use &#39;custom.yml&#39; &amp; &#39;custom2.json&#39;, prioritizing &#39;custom3.yml&#39;, then &#39;custom2.json&#39;</span><br><span class="line">$ hexo generate --config custom.yml,custom2.json,custom3.yml</span><br></pre></td></tr></table></figure>
+<p>当你指定了多个配置文件以后，Hexo 会按顺序将这部分配置文件合并成一个 _multiconfig.yml。如果遇到重复的配置，<br>排在后面的文件的配置会覆盖排在前面的文件的配置。这个原则适用于任意数量、任意深度的 YAML 和 JSON 文件。</p>
+<p>例如，使用 –options 指定了两个自定义配置文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate --config custom.yml,custom2.json</span><br></pre></td></tr></table></figure>
+<p>如果 custom.yml 中指定了 foo: bar，在 custom2.json 中指定了 “foo”: “dinosaur”，<br>那么在 _multiconfig.yml 中你会得到 foo: dinosaur。</p>
+<h2 id="使用代替主题配置文件"><a href="#使用代替主题配置文件" class="headerlink" title="使用代替主题配置文件"></a>使用代替主题配置文件</h2><p>通常情况下，Hexo 主题是一个独立的项目，并拥有一个独立的 _config.yml 配置文件。<br>除了自行维护独立的主题配置文件，你也可以在其它地方对主题进行配置。</p>
+<p>独立的 _config.[theme].yml 文件</p>
+<blockquote>
+<p>该特性自 Hexo 5.0.0 起提供</p>
+</blockquote>
+<p>独立的主题配置文件应放置于站点根目录下，支持 yml 或 json 格式。需要配置站点 _config.yml 文件中的 theme 以供<br>Hexo 寻找 _config.[theme].yml 文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># _config.yml</span><br><span class="line">theme: &quot;my-theme&quot; </span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># _config.my-theme.yml</span><br><span class="line">bio: &quot;My awesome bio&quot;</span><br><span class="line">foo:</span><br><span class="line">  bar: &#39;a&#39; </span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># themes&#x2F;my-theme&#x2F;_config.yml</span><br><span class="line">bio: &quot;Some generic bio&quot;</span><br><span class="line">logo: &quot;a-cool-image.png&quot;</span><br><span class="line">  foo:</span><br><span class="line">    baz: &#39;b&#39;</span><br></pre></td></tr></table></figure>
+<p>最终主题配置的输出是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  bio: &quot;My awesome bio&quot;,</span><br><span class="line">  logo: &quot;a-cool-image.png&quot;,</span><br><span class="line">  foo: &#123;</span><br><span class="line">    bar: &quot;a&quot;,</span><br><span class="line">    baz: &quot;b&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>建议你将所有的主题配置集中在一处。如果你不得不在多处配置你的主题，那么这些信息对你将会<br>非常有用：Hexo 在合并主题配置时，Hexo 配置文件中的 theme_config 的优先级最高，其次是 _config.[theme].yml 文件，最后是位于主题目录下的 _config.yml 文件。</p>
+</blockquote>
+<h1 id="confiig-yml-配置文件"><a href="#confiig-yml-配置文件" class="headerlink" title="_confiig.yml 配置文件"></a>_confiig.yml 配置文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line"># Hexo Configuration</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;configuration.html</span><br><span class="line">## Source: https:&#x2F;&#x2F;github.com&#x2F;hexojs&#x2F;hexo&#x2F;</span><br><span class="line"></span><br><span class="line"># Site                    # 网站设置</span><br><span class="line">title: Hexo               # 网站标题</span><br><span class="line">subtitle: &#39;&#39;              # 网站副标题</span><br><span class="line">description: &#39;&#39;           # 网站描述</span><br><span class="line">keywords:                 # 网站的关键词。支援多个关键词。</span><br><span class="line">author: John Doe          # 您的名字</span><br><span class="line">language: zh-CN           # 网站使用的语言</span><br><span class="line">timezone: &#39;&#39;              # 网站时区。Hexo 默认使用您电脑的时区。时区列表。比如说：America&#x2F;New_York, Japan, 和 UTC 。</span><br><span class="line"></span><br><span class="line">url: http:&#x2F;&#x2F;example.com                     # 网址</span><br><span class="line">root: &#x2F;                                     # 网站根目录</span><br><span class="line"></span><br><span class="line">permalink: :year&#x2F;:month&#x2F;:day&#x2F;:title&#x2F;        # 文章的 永久链接 格式</span><br><span class="line">permalink_defaults:                         # 永久链接中各部分的默认值</span><br><span class="line"></span><br><span class="line">pretty_urls:                   # 改写 permalink 的值来美化 URL</span><br><span class="line">  trailing_index: true         # 是否在永久链接中保留尾部的 index.html，设置为 false 时去除	</span><br><span class="line">  trailing_html: true          # 是否在永久链接中保留尾部的 .html, 设置为 false 时去除 (对尾部的 index.html无效)	</span><br><span class="line"></span><br><span class="line"># Directory                     # 目录</span><br><span class="line">source_dir: source              # 资源文件夹，这个文件夹用来存放内容。	</span><br><span class="line">public_dir: public              # 公共文件夹，这个文件夹用于存放生成的站点文件。	</span><br><span class="line">tag_dir: tags                   # 标签文件夹	</span><br><span class="line">archive_dir: archives           # 归档文件夹	</span><br><span class="line">category_dir: categories        # 分类文件夹	</span><br><span class="line">code_dir: downloads&#x2F;code        # Include code 文件夹，source_dir 下的子目录	</span><br><span class="line">i18n_dir: :lang                 # 国际化（i18n）文件夹</span><br><span class="line">	</span><br><span class="line">skip_render:                    # 跳过指定文件的渲染。匹配到的文件将会被不做改动地复制到 public 目录中。</span><br><span class="line">                                # 您可使用 glob 表达式来匹配路径。	</span><br><span class="line"></span><br><span class="line"># Writing                       # 文章</span><br><span class="line">new_post_name: :title.md        # 新文章的文件名称	</span><br><span class="line">default_layout: post            # 预设布局	</span><br><span class="line">auto_spacing: false             # 在中文和英文之间加入空格	</span><br><span class="line">titlecase: false                # 把标题转换为 title case	</span><br><span class="line">external_link:                  # 在新标签中打开链接	</span><br><span class="line">  enable: true                  # 在新标签中打开链接	</span><br><span class="line">  field: site                   # 对整个网站（site）生效或仅对文章（post）生效	</span><br><span class="line">  exclude: &#39;&#39;                   # 需要排除的域名。主域名和子域名如 www 需分别配置	</span><br><span class="line">filename_case: 0                # 把文件名称转换为 (1) 小写或 (2) 大写	</span><br><span class="line">render_drafts: false            # 显示草稿	</span><br><span class="line">post_asset_folder: true         # 启动 Asset 文件夹</span><br><span class="line">marked:</span><br><span class="line">  prependRoot: true</span><br><span class="line">  postAsset: true</span><br><span class="line">relative_link: false            # 把链接改为与根目录的相对位址	</span><br><span class="line">future: true                    # 显示未来的文章	</span><br><span class="line">highlight:                      # 代码块的设置, 详情：https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;syntax-highlight#PrismJS</span><br><span class="line">  enable: true</span><br><span class="line">  line_number: true</span><br><span class="line">  auto_detect: false</span><br><span class="line">  tab_replace: &#39;&#39;</span><br><span class="line">  wrap: true</span><br><span class="line">  hljs: false</span><br><span class="line">prismjs:                        # 代码块的设置, 详情：https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;syntax-highlight#PrismJS</span><br><span class="line">  enable: false</span><br><span class="line">  preprocess: true</span><br><span class="line">  line_number: true</span><br><span class="line">  tab_replace: &#39;&#39;</span><br><span class="line"></span><br><span class="line"># 主页设置    貌似是 hexo-generator-index插件的配置</span><br><span class="line">index_generator:</span><br><span class="line">  path: &#39;&#39;                  # 博客索引页的根路径</span><br><span class="line">  per_page: 10              # 每页数量</span><br><span class="line">  order_by: -date           # 按日期排序</span><br><span class="line"></span><br><span class="line"># 分类 &amp; 标签</span><br><span class="line">default_category: uncategorized         # 默认分类	</span><br><span class="line">category_map:                           # 分类别名	</span><br><span class="line">    Hexo: hexo                          # 原分类名： 别名</span><br><span class="line">tag_map:                                # 标签别名	</span><br><span class="line">    Hexo: hexo                          # 原标签名： 别名 </span><br><span class="line">    </span><br><span class="line"># Metadata elements                     # 没明白是啥，应该是html的相关插件设置</span><br><span class="line">## https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Web&#x2F;HTML&#x2F;Element&#x2F;meta</span><br><span class="line">meta_generator: true</span><br><span class="line"></span><br><span class="line"># 日期 &#x2F; 时间格式</span><br><span class="line">## Hexo uses Moment.js to parse and display date</span><br><span class="line">## You can customize the date format as defined in</span><br><span class="line">## http:&#x2F;&#x2F;momentjs.com&#x2F;docs&#x2F;#&#x2F;displaying&#x2F;format&#x2F;</span><br><span class="line">date_format: YYYY-MM-DD             # 日期格式	</span><br><span class="line">time_format: HH:mm:ss               # 时间格式	</span><br><span class="line">## updated_option supports &#39;mtime&#39;, &#39;date&#39;, &#39;empty&#39;     </span><br><span class="line">updated_option: &#39;mtime&#39;             # 当 Front Matter 中没有指定 updated 时 updated 的取值</span><br><span class="line">                                    # 简单来说就是当文章中没有指定的时间时，默认使用的时间选择方式</span><br><span class="line"></span><br><span class="line"># 分页</span><br><span class="line">## Set per_page to 0 to disable pagination</span><br><span class="line">per_page: 10                # 每页显示的文章量 (0 &#x3D; 关闭分页功能)</span><br><span class="line">pagination_dir: page        # 分页目录	</span><br><span class="line"></span><br><span class="line"># 包括或不包括目录和文件</span><br><span class="line">## include:&#x2F;exclude: options only apply to the &#39;source&#x2F;&#39; folder</span><br><span class="line">include:                    # Hexo 默认会忽略隐藏文件和文件夹</span><br><span class="line">                            #（包括名称以下划线和 . 开头的文件和文件夹，Hexo 的 _posts </span><br><span class="line">                            # 和 _data 等目录除外）。通过设置此字段将使 Hexo 处理他们并将它们复制到 source 目录下。</span><br><span class="line">exclude:                    # Hexo 会忽略这些文件和目录</span><br><span class="line">ignore:                     # 用于忽略 themes&#x2F; 目录下的部分文件或文件夹（include和exclude不适用于themes文件夹）</span><br><span class="line"></span><br><span class="line"># 扩展</span><br><span class="line">## Plugins: https:&#x2F;&#x2F;hexo.io&#x2F;plugins&#x2F;</span><br><span class="line">## Themes: https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F;</span><br><span class="line">theme: Butterfly            # 当前主题名称。值为false时禁用主题</span><br><span class="line"></span><br><span class="line"># 部署设置</span><br><span class="line">## 文档: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;one-command-deployment</span><br><span class="line">## 中文文档：https:&#x2F;&#x2F;hexo.io&#x2F;zh-cn&#x2F;docs&#x2F;one-command-deployment</span><br><span class="line">deploy:</span><br><span class="line">  type: git     # 部署类型</span><br><span class="line">  repo: git@github.com:poq-Jade&#x2F;hexo.github.io.git      # 库（Repository）地址</span><br><span class="line">  branch: master                                        # 分支名称	</span><br><span class="line"></span><br></pre></td></tr></table></figure></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:1043643347@qq.com">平淡且平凡</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/posts/e18ede91.html">http://example.com/posts/e18ede91.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">平淡且平凡</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/hext/">Hexo</a></div><div class="post_share"><div class="social-share" data-image="/null" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/dda3546a.html"><img class="prev-cover" data-lazy-src="/null" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">主题Butterfly-安装</div></div></a></div><div class="next-post pull-right"><a href="/posts/507239ef.html"><img class="next-cover" data-lazy-src="/null" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">标签插件（Tag Plugins）</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/b8f4bd70.html" title="Hexo博客搭建"><img class="cover" data-lazy-src="/null"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-08</div><div class="title">Hexo博客搭建</div></div></a></div><div><a href="/posts/8985cdfe.html" title="Hexo图片的使用"><img class="cover" data-lazy-src="/null"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-14</div><div class="title">Hexo图片的使用</div></div></a></div><div><a href="/posts/c0c5e2f4.html" title="Markdown 样式示例（一）"><img class="cover" data-lazy-src="/null"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-08</div><div class="title">Markdown 样式示例（一）</div></div></a></div><div><a href="/posts/f0d30e2c.html" title="Markdown 样式示例（二）"><img class="cover" data-lazy-src="/null"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-09</div><div class="title">Markdown 样式示例（二）</div></div></a></div><div><a href="/posts/dda3546a.html" title="主题Butterfly-安装"><img class="cover" data-lazy-src="/null"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-16</div><div class="title">主题Butterfly-安装</div></div></a></div><div><a href="/posts/33e9b209.html" title="主题Butterfly-配置（四）"><img class="cover" data-lazy-src="/null"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-26</div><div class="title">主题Butterfly-配置（四）</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 By 平淡且平凡</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.spacingElementById('content-inner')
+  else {
+    $.getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js', () => {
+      pangu.spacingElementById('content-inner')
+    })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguFn)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    window.valine = new Valine({
+      el: '#vcomment',
+      appId: 'XMbk2Nj8IujH0ADojq7U5h5N-gzGzoHsz',
+      appKey: 'XG55cpCr2jATAHRRNiH4xcm6',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+    });
+    if ('nick,mail') { valine.config.requiredFields= 'nick,mail'.split(',') }
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script defer="defer" id="ribbon_piao" mobile="false" src="/js/third-party/piao.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="/js/third-party/canvas-nest.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="/js/third-party/ClickShowText.js" async="async"></script><script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/5e3b80ca.js","daovoice")
+</script><script>var isChatBtn = true
+daovoice('init', {
+  app_id: '5e3b80ca',},{
+  launcher: { 
+     disableLauncherIcon: isChatBtn // 悬浮 ICON 是否显示
+  },
+});
+daovoice('update');
+
+if (isChatBtn) {
+  var chatBtnFn = () => {
+    var chatBtn = document.getElementById("chat_btn")
+    chatBtn.addEventListener("click", function(){
+      daovoice('show')
+    });
+  }
+  chatBtnFn()
+} else {
+  if (false) {
+    function chatBtnHide () {
+      daovoice('update', {},{
+        launcher: { 
+        disableLauncherIcon: true // 悬浮 ICON 是否显示
+        },
+      });
+    }
+    function chatBtnShow () {
+      daovoice('update', {},{
+        launcher: { 
+        disableLauncherIcon: false // 悬浮 ICON 是否显示
+        },
+      });
+    }
+  }
+}</script></div></body></html>
